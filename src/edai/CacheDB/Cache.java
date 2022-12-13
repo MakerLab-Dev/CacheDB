@@ -1,10 +1,10 @@
 package edai.CacheDB;
 
 import edai.CacheDB.exceptions.*;
-import edai.CacheDB.utils.*;
+import edai.CacheDB.store.*;
 
 public class Cache implements ICache {
-    private final TreeMap map = new TreeMap();
+    private final KeyValueStore store = new KeyValueStore();
 
     public Cache() {}
 
@@ -13,7 +13,7 @@ public class Cache implements ICache {
      * @return array of stored keys
      */
     public String[] getAll() {
-        return map.keys();
+        return store.getAllKeys();
     }
 
     /**
@@ -23,7 +23,7 @@ public class Cache implements ICache {
      * @throws KeyNotFoundException if key does not exist.
      */
     public String get(String key) throws KeyNotFoundException {
-        return map.get(key);
+        return store.get(key);
     }
 
     /**
@@ -36,7 +36,7 @@ public class Cache implements ICache {
      */
     public String getOrDefault(String key, String defaultValue) {
         try {
-            return map.get(key);
+            return store.get(key);
         } catch (KeyNotFoundException e) {
             return defaultValue;
         }
@@ -48,7 +48,7 @@ public class Cache implements ICache {
      * @return True if key exists.
      */
     public boolean exists(String key) {
-        return map.exists(key);
+        return store.exists(key);
     }
 
     /**
@@ -61,12 +61,7 @@ public class Cache implements ICache {
         if (key == null || value == null) {
             throw new IllegalArgumentException();
         }
-        if (map.exists(key)) {
-            //TODO: update
-            //map.update(key, value);
-        } else {
-            map.put(key, value);
-        }
+        store.put(key, value);
     }
 
     /**
@@ -76,10 +71,10 @@ public class Cache implements ICache {
      * @throws DuplicatedKeyException the key already exists.
      */
     public void addNew(String key, String value) throws DuplicatedKeyException {
-        if (map.exists(key)) {
+        if (store.exists(key)) {
             throw new DuplicatedKeyException();
         }
-        map.put(key, value);
+        store.put(key, value);
     }
 
     /**
@@ -88,10 +83,10 @@ public class Cache implements ICache {
      * @throws KeyNotFoundException if key does not exist.
      */
     public void remove(String key) throws KeyNotFoundException {
-        if (!map.exists(key)) {
+        if (!store.exists(key)) {
             throw new KeyNotFoundException();
         }
-        map.remove(key);
+        store.remove(key);
     }
 
     /**
@@ -99,6 +94,6 @@ public class Cache implements ICache {
      * @return Count of keys.
      */
     public int size() {
-        return map.size();
+        return store.size();
     }
 }

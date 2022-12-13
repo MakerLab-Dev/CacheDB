@@ -12,13 +12,18 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     public void insert(T value) {
-        TreeNode<T> newNode = new TreeNode(value);
+        TreeNode<T> newNode = new TreeNode<>(value);
         if (root == null) {
             this.root = newNode;
         } else {
             TreeNode<T> currentNode = root;
             while (true) {
-                if (value.compareTo(currentNode.getValue()) < 0) {
+                int comparison = value.compareTo(currentNode.getValue());
+                if (comparison == 0) {
+                    currentNode.setValue(value);
+                    break;
+                }
+                if (comparison < 0) {
                     if (currentNode.getLeft() == null) {
                         currentNode.setLeft(newNode);
                         break;
@@ -77,11 +82,14 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     private TreeNode<T> getParent(TreeNode<T> node) {
-        TreeNode<T> currentNode = root;
-        if (currentNode == root) {
+        return this.getParent(node, root);
+    }
+
+    private TreeNode<T> getParent(TreeNode<T> node, TreeNode<T> currentNode) {
+        if (node == root) {
             return null;
         } else if (currentNode.getLeft() != node && currentNode.getRight() != node) {
-            return node.getValue().compareTo(currentNode.getValue()) < 0 ? this.getParent(currentNode.getLeft()) : this.getParent(currentNode.getRight());
+            return node.getValue().compareTo(currentNode.getValue()) < 0 ? this.getParent(node, currentNode.getLeft()) : this.getParent(node, currentNode.getRight());
         } else {
             return currentNode;
         }

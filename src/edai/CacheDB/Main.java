@@ -21,6 +21,23 @@ public class Main {
             cache.remove("key1");
             System.out.println("key1 exists: " + cache.exists("key1"));
             System.out.println("key1: " + cache.getOrDefault("key1", "default"));
+
+            System.out.println("key2: " + cache.getOrDefault("key2", "default"));
+            cache.put("key2", "value2 updated");
+            System.out.println("key2: " + cache.getOrDefault("key2", "default"));
+
+            // Print all keys
+            System.out.println("All keys:");
+            for (String key : cache.getAll()) {
+                System.out.println(key);
+            }
+
+            // Print all keys and values
+            System.out.println("All keys and values:");
+            for (String key : cache.getAll()) {
+                System.out.println(key + ": " + cache.get(key));
+            }
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
