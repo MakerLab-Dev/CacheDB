@@ -45,7 +45,8 @@ public interface ICache {
     void addNew(String key, String value) throws DuplicatedKeyException;
     /**
      * Remove a key and its value.
-     * @param key Key to be stored.* @throws KeyNotFoundException if key does not exist.
+     * @param key Key to be stored.
+     * @throws KeyNotFoundException if key does not exist.
      */
     void remove(String key) throws KeyNotFoundException;
     /**

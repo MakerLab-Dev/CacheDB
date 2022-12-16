@@ -4,9 +4,16 @@ import edai.CacheDB.exceptions.*;
 import edai.CacheDB.store.*;
 
 public class Cache implements ICache {
-    private final KeyValueStore store = new KeyValueStore();
+    private final KeyValueStore store;
 
-    public Cache() {}
+    public Cache() {
+        store = new KeyValueStore();
+    }
+
+    /* Specify the path where the cache will be stored. */
+    public Cache(String path) {
+        store = new KeyValueStore(path);
+    }
 
     /**
      * Get all keys stored in cache.
