@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="CacheDB:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CacheDB_jar</output-path>
+    <root id="archive" name="CacheDB.jar">
+      <element id="module-output" name="CacheDB" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/picocli-4.7.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -7,6 +7,9 @@ import edai.CacheDB.utils.*;
 // This class is used to store key-value pairs in a tree map and persist them in a
 // file. The key gets hashed and the value is stored in the node with the
 // same hash.
+// Nota: La estructura de datos que yo hubiera utilizado para implementar
+// la cache hubiera sido un HashMap, ya que es la estructura mas adecuada
+// por su eficiencia de O(1) de media que comparado con el TreeMap es O(log n).
 public class KeyValueStore implements IStore {
     private final String path;
     private final TreeMap map = new TreeMap();
