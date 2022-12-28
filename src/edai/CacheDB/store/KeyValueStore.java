@@ -56,8 +56,12 @@ public class KeyValueStore implements IStore {
         }
     }
 
-    // Save the created/modified key-value pair to the file system instead of
-    // the entire tree map.
+    /**
+     * Save the created/modified key-value pair to the file system instead of
+     * the entire tree map.
+     * @param key The key to save.
+     * @param value The value to save.
+     */
     public void save(String key, String value) {
         ReadWrite.writeToFile(getFileFromKey(key), new MapEntry(key, value));
     }
@@ -136,6 +140,14 @@ public class KeyValueStore implements IStore {
      */
     public int size() {
         return map.size();
+    }
+
+    /**
+     * Clear the store.
+     */
+    public void clear() {
+        ReadWrite.clear(path);
+        map.clear();
     }
 
     /**
