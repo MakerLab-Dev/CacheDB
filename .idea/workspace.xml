@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d697659-2537-4f1d-8d01-f1efc9d34d7d" name="Changes" comment="Data Structures bug fixes and picocli imported">
-      <change afterPath="$PROJECT_DIR$/test/edai/CacheDB/CacheTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/edai/CacheDB/store/KeyValueStoreTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edai/CacheDB/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edai/CacheDB/Cache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edai/CacheDB/ICache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edai/CacheDB/ICache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edai/CacheDB/app/CacheDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edai/CacheDB/app/CacheDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edai/CacheDB/io/ReadWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edai/CacheDB/io/ReadWrite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edai/CacheDB/store/IStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edai/CacheDB/store/IStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edai/CacheDB/store/KeyValueStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edai/CacheDB/store/KeyValueStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edai/CacheDB/utils/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edai/CacheDB/utils/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edai/CacheDB/utils/TreeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edai/CacheDB/utils/TreeMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,21 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CacheDB" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edai.CacheDB.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edai.CacheDB.utils" />
-      <option name="MAIN_CLASS_NAME" value="edai.CacheDB.utils.BinaryTreeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BinaryTreeTest.testRemoveAndReplaceWithNodeAndRightTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CacheDB" />
       <extension name="coverage">
@@ -122,6 +98,21 @@
       <option name="MAIN_CLASS_NAME" value="edai.CacheDB.utils.BinaryTreeTest" />
       <option name="METHOD_NAME" value="testRemoveAndReplaceWithNodeAndRightTree" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CacheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CacheDB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edai.CacheDB.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edai.CacheDB" />
+      <option name="MAIN_CLASS_NAME" value="edai.CacheDB.CacheTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CacheDB" />
+        <item itemvalue="JUnit.CacheTest" />
         <item itemvalue="JUnit.CacheTest.testInsert" />
+        <item itemvalue="Application.CacheDB" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BinaryTreeTest.testRemoveAndReplaceWithNodeAndRightTree" />
-        <item itemvalue="JUnit.BinaryTreeTest" />
       </list>
     </recent_temporary>
   </component>
