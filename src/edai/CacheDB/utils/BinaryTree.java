@@ -81,6 +81,8 @@ public class BinaryTree<T extends Comparable<T>> {
         }
     }
 
+    public void clear() { this.root = null; }
+
     private TreeNode<T> getParent(TreeNode<T> node) {
         return this.getParent(node, root);
     }

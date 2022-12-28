@@ -65,4 +65,16 @@ public class ReadWrite {
             System.out.println(e.getMessage());
         }
     }
+
+    public static void clear(String path) {
+        for (int i = 0; i < 16; i++) {
+            String dir = path + Integer.toHexString(i) + "/";
+            String[] subFiles = getAllFiles(dir);
+            if (subFiles != null) {
+                for (int j = 0; j < subFiles.length; j++) {
+                    deleteFile(dir + subFiles[j]);
+                }
+            }
+        }
+    }
 }

@@ -54,4 +54,8 @@ public interface ICache {
      * @return Count of keys.
      */
     int size();
+    /**
+     * Clear the cache.
+     */
+    void clear();
 }

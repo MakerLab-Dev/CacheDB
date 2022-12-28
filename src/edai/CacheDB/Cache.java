@@ -103,4 +103,11 @@ public class Cache implements ICache {
     public int size() {
         return store.size();
     }
+
+    /**
+     * Clear the cache.
+     */
+    public void clear() {
+        store.clear();
+    }
 }

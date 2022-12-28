@@ -3,7 +3,7 @@ package edai.CacheDB.utils;
 import edai.CacheDB.exceptions.*;
 
 public class TreeMap {
-        private final BinaryTree<MapEntry> tree = new BinaryTree<>();
+    private final BinaryTree<MapEntry> tree = new BinaryTree<>();
 
     public void put(String key, String value) {
         MapEntry entry = new MapEntry(key, value);
@@ -17,6 +17,8 @@ public class TreeMap {
         }
         return entry.getValue().getValue();
     }
+
+    public void clear() { tree.clear(); }
 
     public boolean isEmpty() {
         return tree.isEmpty();

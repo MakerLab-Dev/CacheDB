@@ -49,4 +49,9 @@ public interface IStore {
      * @return Count of keys. (and therefore the number of values stored)
      */
     int size();
+
+    /**
+     * Clear the cache.
+     */
+    void clear();
 }
